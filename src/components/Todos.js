@@ -1,24 +1,10 @@
 import React from "react";
+import { useStoreState } from "easy-peasy";
 import TodoItem from "./TodoItem";
 
 const Todos = () => {
-  const todos = [
-    {
-      id: 1,
-      title: "Take out trash",
-      completed: true,
-    },
-    {
-      id: 2,
-      title: "Pickup kids from school",
-      completed: false,
-    },
-    {
-      id: 3,
-      title: "Dinner with boss",
-      completed: false,
-    },
-  ];
+  const todos = useStoreState((state) => state.todos);
+
   return (
     <>
       <h1>Todos</h1>
